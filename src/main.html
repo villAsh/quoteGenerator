@@ -5,8 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
+    <section class="bg-gradient-to-r  from-blue-400 to-violet-500 h-[100vh]">
+        <div class="container grid grid-cols-1 w-auto place-content-center border-2 border-white">
+            <div class="bg-slate-700 text-center text-white p-3">
+                <h1 class="text-xl" id="header">JavaScript Random Quote Generator</h1>
+            </div>
+            <div class="p-10 bg-red-400 flex flex-wrap">
+                <span>"</span><p id="quote" class="text-xl">"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur suscipit assumenda facilis velit nisi dolor ducimus, molestias consequuntur perferendis excepturi!"</p> <span>"</span>
+            </div>
+            <div  class="px-10 pb-5 text-2xl bg-red-400">
+                <span >-</span><h2 id="name" class="inline-block ml-1">lary wheels</h2>
+            </div>
+            <div class="text-center">
+                <button type="button" id="btn" class="px-4 py-3 my-2 bg-red-400 outline outline-2 outline-gray-700 text-center">Next quote</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        var btn = document.querySelector('#btn');
+        var quote = document.querySelector('#quote');
+        var person = document.querySelector('#name');
+        const quotes = [
+	{ 
+		"quote" : "The only sin is ignorance", 
+		"person" : "Christopher Marlowe" 
+	},
+	{
+		"quote" : "A man is his own easiest dupe, for what he wishes to be true he generally believes to be true", 
+		"person" : "Demosthenes"
+	},
+	{
+		"quote" : "A lie can travel halfway around the world while the truth is putting on its shoes", 
+		"person" : "Mark Twain"
+	},
+	{
+		"quote" : "Great minds discuss ideas; average minds discuss events; small minds discuss people", 
+		"person" : "Eleanor Roosevelt"
+	},
+	{
+		"quote" : "If you have a garden and a library, you have everything you need", 
+		"person" : "Marcus Tullius Cicero"
+	},
+	{
+		"quote" : "Truth comes out in wine", 
+		"person" : "Pliny the Elder"
+	},
+	{
+		"quote" : "Everything in the universe is within you. Ask all from yourself", 
+		"person" : "Rumi"
+	},
+	{
+		"quote" : "When I get a little money I buy books; and if any is left I buy food and clothes", 
+		"person" : "Desiderius Erasmus"
+	}
+]
+        btn.addEventListener('click',function(){
+            let num =  Math.floor(Math.random() * quotes.length);
+            quote.innerHTML = quotes[num].quote;
+            person.innerHTML = quotes[num].person;
+        });
+    </script>
 </body>
 </html>
